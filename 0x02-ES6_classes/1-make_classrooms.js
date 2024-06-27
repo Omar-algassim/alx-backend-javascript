@@ -8,4 +8,4 @@ export default function initializeRooms() {
     rooms.push(new ClassRoom(num[i]));
   }
   return rooms;
-}
+};
