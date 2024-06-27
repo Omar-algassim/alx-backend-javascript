@@ -2,42 +2,42 @@
 import Currency from './3-currency.js';
 
 export default class Pricing {
-  construcrot(amount, currency) {
-  this.amount = amount;
-  this.currency = currency;
-}
+  constructor(amount, currency) {
+    this.amount = amount;
+    this.currency = currency;
+  }
 
-get amount() {
-    return this._amount;
-}
+    get amount() {
+        return this._amount;
+    }
 
-set amount(amount) {
-    if (typeof amount !== 'number') {
-        throw new TypeError('Amount must be a number');
+    set amount(amount) {
+        if (typeof amount !== 'number') {
+            throw new TypeError('Amount must be a number');
+        }
+        this._amount = amount;
     }
-    this._amount = amount;
-}
-get currency() {
-    return this._currency;
-}
+    get currency() {
+        return this._currency;
+    }
 
-set currency(currency) {
-    if (typeof currency !== 'Currency') {
-        throw new TypeError('Currency must be a currency object');
+    set currency(currency) {
+        if (!(currency instanceof Currency)) {
+            throw new TypeError('Currency must be a currency');
+        }
+        this._currency = currency;
     }
-    this._currency = currency;
-}
-displayFullPrice() {
-    return `${this.amount} ${this.currency.displayFullCurrency()}`;
-}
+    displayFullPrice() {
+        return `${this.amount} ${this.currency.displayFullCurrency()}`;
+    }
 
-static convertPrice(amount, conversionRate) {
-    if (typeof amount !== 'number') {
-        throw new TypeError('Amount must be a number');
+    static convertPrice(amount, conversionRate) {
+        if (typeof amount !== 'number') {
+            throw new TypeError('Amount must be a number');
+        }
+        if (typeof conversionRate !== 'number') {
+            throw new TypeError('Conversion rate must be a number');
+        }
+        return amount * conversionRate;
     }
-    if (typeof conversionRate !== 'number') {
-        throw new TypeError('Conversion rate must be a number');
-    }
-    return amount * conversionRate;
-}
 };
