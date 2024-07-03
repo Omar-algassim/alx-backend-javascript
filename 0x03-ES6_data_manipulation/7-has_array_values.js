@@ -1,5 +1,10 @@
 #!/usr/bin/node
 
-export default function hasValuesFromArray(arr, values) {
-  return values.every((x) => arr.includes(x));
-}
+export default function hasValuesFromArray(set, arr) {
+  for (const item of arr) {
+    if (!set.has(item)) {
+      return false;
+    }
+  }
+  return true;
+};
