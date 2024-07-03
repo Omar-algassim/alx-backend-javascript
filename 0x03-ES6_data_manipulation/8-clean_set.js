@@ -8,4 +8,4 @@ export default function cleanSet(arr, startString) {
     .filter((parametro) => (parametro !== undefined ? parametro.startsWith(startString) : ''))
     .map((parametro) => (parametro !== undefined ? parametro.slice(startString.length) : ''))
     .join('-');
-};
+}
