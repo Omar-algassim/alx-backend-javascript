@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 export default function getListStudentIds(arr) {
-  if (!arr.sArray()) {
+  if (!Array.isArray(arr)) {
     return [];
   }
   return arr.map((x) => x.id);
