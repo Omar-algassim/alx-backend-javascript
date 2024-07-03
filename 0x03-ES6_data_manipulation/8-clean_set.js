@@ -1,8 +1,10 @@
 #!/usr/bin/node
 
 export default function cleanSet(arr, startString) {
-  if (!arr.sArray()) {
-    return [];
+  if (startString === undefined || typeof startString !== 'string') {
+    return '';
   }
-  return arr.filter((x) => x.startsWith(startString)).map((x) => x.slice(startString.length));
-}
+  return arr.filter((x) => 
+    (x !== undefined ? x.startsWith(startString) : '')).map((x) => 
+        (x !== undefined ? x.slice(startString.length) : '')).join('-')
+};
