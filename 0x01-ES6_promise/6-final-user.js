@@ -22,7 +22,7 @@ export default function handleProfileSignup(firstName, lastName, filename) {
           resultArray.push(
             {
               status: promise.status,
-              value: promise.reason,
+              value: `${promise.reason}`,
             },
           );
         }
