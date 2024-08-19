@@ -24,10 +24,9 @@ function countStudents(filename) {
     });
     const studentNUmber = parseLine.length;
     console.log(`Number of students: ${studentNUmber}`);
+    // eslint-disable-next-line guard-for-in
     for (const f in field) {
-      if (Object.hasOwn(field, f)) {
-        console.log(`Number of students in ${f}: ${field[f].count}. List: ${field[f].names.join(', ')}`);
-      }
+      console.log(`Number of students in ${f}: ${field[f].count}. List: ${field[f].names.join(', ')}`);
     }
   }
 }
