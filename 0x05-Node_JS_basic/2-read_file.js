@@ -25,8 +25,10 @@ function countStudents(filename) {
     const studentNUmber = parseLine.length;
     console.log(`Number of students: ${studentNUmber}`);
     for (const f in field) {
-      console.log(`Number of students in ${f}: ${field[f].count}. List: ${field[f].names.join(', ')}`);
+      if (Object.hasOwn(field, f)) {
+        console.log(`Number of students in ${f}: ${field[f].count}. List: ${field[f].names.join(', ')}`);
+      }
     }
-}
+  }
 }
 module.exports = countStudents;
