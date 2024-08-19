@@ -5,7 +5,7 @@ function countStudents(filename) {
   return new Promise((resolve, rejects) => {
     fs.readFile(filename, 'utf-8', (err, data) => {
       if (err) {
-        rejects(new Error('Cannot load the database'))
+        rejects(new Error('Cannot load the database'));
       }
       if (data) {
         const data = fs.readFileSync(filename);
