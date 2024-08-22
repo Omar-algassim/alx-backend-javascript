@@ -7,32 +7,27 @@ if the rounded value of b is equal to 0, return the string Error
 */
 
 function calculateNumber(type, a, b) {
+    const roundedA = Math.round(a);
+    const roundedB = Math.round(b);
     const calculate = {
         SUM: function (a, b) {
-            roundedA = Math.round(a);
-            roundedB = Math.round(b);
-            return roundedA + roundedB;
+            return a + b;
         },
         SUBTRACT: function(a, b) {
-            roundedA = Math.round(a);
-            roundedB = Math.round(b);
-            return roundedA - roundedB;
+            return a - b;
         },
         DIVIDE: function(a, b) {
-            roundedA = Math.round(a);
-            roundedB = Math.round(b);
-            if (roundedB === 0) {
+            if (b === 0) {
                 return "Error";
             }
-            return roundedA / roundedB;
+            return a / b;
         }
     }
     if (calculate[type] === undefined) {
         return 0;
     }
     const operation = calculate[type];
-    return operation(a, b);
+    return operation(roundedA, roundedB);
   }
   
-  module.exports = calculateNumber;
-  
+export default calculateNumber;

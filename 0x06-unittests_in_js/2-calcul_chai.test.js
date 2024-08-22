@@ -1,7 +1,7 @@
 #!/usr/bin/node
-const chai = require('chai');
-const expect = chai.expect;
-const calculateNumber = require('./1-calcul.js')
+import { expect } from 'chai';
+import calculateNumber from './2-calcul_chai.js'
+
 
 describe('calculateNumber', function() {
   describe("#SUM", function () {
@@ -50,7 +50,7 @@ describe('calculateNumber', function() {
     })
     it('test the type of number', function() {
       const result = calculateNumber('SUBTRACT', 1.5, 2.5);
-      expect(typeof(result).to.equal('number');
+      expect(typeof(result)).to.equal('number');
     })
   });
 
