@@ -27,6 +27,9 @@ function calculateNumber(type, a, b) {
             return roundedB / roundedA;
         }
     }
+    if (calculate[type] === undefined) {
+        return 0;
+    }
     const operation = calculate[type];
     return operation(a, b);
   }
