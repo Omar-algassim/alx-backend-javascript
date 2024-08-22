@@ -52,7 +52,7 @@ describe('calculateNumber', function() {
       assert.ok(typeof(result), 'number')
     })
   });
-  
+
   describe('#DIVISION', function() {
     it('shuold be rounded and divison', function() {
       assert.equal(calculateNumber('DIVIDE', 1.6, 1), 0.5);
@@ -67,10 +67,13 @@ describe('calculateNumber', function() {
       assert.equal(calculateNumber('DIVIDE', -2.3, -4), 2);
     })
     it('rounded under 0.5 and divison', function() {
-      assert.equal(calculateNumber('DIVIDE', 2.3, 4), 2);
+      assert.equal(calculateNumber('DIVIDE', 2.3, 4.1), 2);
     })
     it('return the above 0.5 rounded and divison', function() {
-      assert.equal(calculateNumber('DIVIDE', 3.6, 1.7), 0.5);
+      assert.equal(calculateNumber('DIVIDE', 0.0, 1), Infinity);
+    })
+    it('return the above 0.5 rounded and divison', function() {
+      assert.equal(calculateNumber('DIVIDE', 0.0, 0.0), 'Error');
     })
     it('test divison with zero', function() {
       assert.equal(calculateNumber('DIVIDE', 3.6, 0), 'Error');
