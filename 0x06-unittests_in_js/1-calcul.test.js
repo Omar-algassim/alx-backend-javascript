@@ -60,8 +60,11 @@ describe('calculateNumber', function() {
     it('test regular number divison', function() {
       assert.equal(calculateNumber('DIVIDE', 1, 1), 1);
     })
-    it('rounded 0.5 and divison', function() {
-      assert.equal(calculateNumber('DIVIDE', 1.5, 5.6), 3);
+    it('rounded 0.5 and divison negative number', function() {
+      assert.equal(calculateNumber('DIVIDE', 1.5, -5.6), -3);
+    })
+    it('divide tow negative number', function() {
+      assert.equal(calculateNumber('DIVIDE', -2.3, -4), 2);
     })
     it('rounded under 0.5 and divison', function() {
       assert.equal(calculateNumber('DIVIDE', 2.3, 4), 2);
