@@ -29,11 +29,17 @@ describe('calculateNumber', function() {
     it('shuold be rounded and subtruct', function() {
       assert.equal(calculateNumber('SUBTRACT', 1.6, 1), 1);
     })
-    it('test regular number subtructing', function() {
-      assert.equal(calculateNumber('SUBTRACT', 1, 1), 0);
+    it('test negative number subtructing', function() {
+      assert.equal(calculateNumber('SUBTRACT', -1, -1), 0);
+    })
+    it('test negative number subtructing', function() {
+      assert.equal(calculateNumber('SUBTRACT', 0, 1), -1);
     })
     it('rounded 0.5 and subtruct', function() {
       assert.equal(calculateNumber('SUBTRACT', 1.5, 1.5), 0);
+    })
+    it('subtruct tow negative number should added', function() {
+      assert.equal(calculateNumber('SUBTRACT', 3, -1.5), 4);
     })
     it('rounded under 0.5 and subtruct', function() {
       assert.equal(calculateNumber('SUBTRACT', 2.3, 3.1), -1);
