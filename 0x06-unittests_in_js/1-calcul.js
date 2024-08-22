@@ -24,7 +24,7 @@ function calculateNumber(type, a, b) {
             if (roundedB === 0) {
                 return "Error";
             }
-            return roundedB / roundedA;
+            return roundedA / roundedB;
         }
     }
     if (calculate[type] === undefined) {
