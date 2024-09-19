@@ -8,7 +8,7 @@ async function countStudents(paht) {
       const splitLines = data.split('\n').filter((line) => line.length > 0);
       const numberOfStudents = splitLines.length - 1;
       const studentField = {};
-      for (let i = 1; i < splitLines.length; i++) {
+      for (let i = 1; i < splitLines.length; i += 1) {
         const data = splitLines[i].split(',');
         if (data[3] in studentField) {
           studentField[data[3]].push(data[0]);
@@ -18,7 +18,9 @@ async function countStudents(paht) {
       }
       resolve(console.log(`Number of students: ${numberOfStudents}`));
       for (const key in studentField) {
-        console.log(`Number of students in ${key}: ${studentField[key].length}. List: ${studentField[key].join(', ')}`);
+        if (Object.prototype.hasOwnProperty.call(studentField, key)) {
+          console.log(`Number of students in ${key}: ${studentField[key].length}. List: ${studentField[key].join(', ')}`);
+        }
       }
     } catch (error) {
       reject(new Error('Cannot load the database'));
