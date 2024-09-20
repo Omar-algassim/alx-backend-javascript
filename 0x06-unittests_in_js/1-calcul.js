@@ -1,5 +1,5 @@
 
-calculateNumber = function (a, b, type) {
+calculateNumber = function (type, a, b) {
     rondedA = Math.round(a);
     rondedB = Math.round(b);
     if (type === 'SUM') {
