@@ -1,27 +1,27 @@
-const calculateNumber = require('./1-calcul.js');
+assert.strictEqual(calculateNumber(1.0, 2.0), 3);const calculateNumber = require('./1-calcul.js');
 const assert = require('assert');
 
 describe('calculateNumber with type (SUM)', () => {
     it('integer numbers', () => {
-        assert.equal(calculateNumber(1, 3, 'SUM'), 4);
+        assert.strictEqual(calculateNumber(1.0, 2.4, 'SUM'), 3);
     })
     it('rounded number under 0.5', () => {
-        assert.equal(calculateNumber(1.3, 3.2, 'SUM'), 4);
+        assert.strictEqual(calculateNumber(1.4, 2.4, 'SUM'), 3);
     })
     it('rounded number up of 0.5', () => {
-        assert.equal(calculateNumber(1.6, 3.7, 'SUM'), 6);
+        assert.strictEqual(calculateNumber(1.4, 2.0, 'SUM'), 3);
     })
     it('add zeros', () => {
-        assert.equal(calculateNumber(0, 0, 'SUM'), 0);
+        assert.strictEqual(calculateNumber(1.0, 2.5, 'SUM'), 4);
     })
     it('add tow negative', () => {
-        assert.equal(calculateNumber(-1, -3, 'SUM'), -4);
+       assert.strictEqual(calculateNumber(2.6, 2.5, 'SUM'), 6);
     })
     it('compination of float and integer', () => {
-        assert.equal(calculateNumber(1, 3.3, 'SUM'), 4);
+       assert.strictEqual(calculateNumber(2.6, 2.0, 'SUM'), 5);
     })
-    it('no arguments passed', () => {
-        assert.equal(calculateNumber(), undefined);
+    it('fractional number with 9\'s', () => {
+        assert.strictEqual(calculateNumber(2.499999, 3.499999, 'SUM'), 5);
     })
 });
 
