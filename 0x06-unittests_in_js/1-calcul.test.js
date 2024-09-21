@@ -1,4 +1,4 @@
-assert.strictEqual(calculateNumber(1.0, 2.0), 3);const calculateNumber = require('./1-calcul.js');
+const calculateNumber = require('./1-calcul.js');
 const assert = require('assert');
 
 describe('calculateNumber with type (SUM)', () => {
